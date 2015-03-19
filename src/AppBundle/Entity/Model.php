@@ -7,12 +7,12 @@ use Doctrine\ORM\Mapping as ORM;
 use AppBundle\Entity\Catalog as Catalog;
 
 /**
- * Gamma
+ * Model
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="AppBundle\Entity\GammaRepository")
+ * @ORM\Entity(repositoryClass="AppBundle\Entity\ModelRepository")
  */
-class Gamma
+class Model
 {
     /**
      * @var integer
@@ -37,10 +37,10 @@ class Gamma
     private $url;
 	
 	/**
-     * @ORM\ManyToOne(targetEntity="Catalog", inversedBy="gammas")
-     * @ORM\JoinColumn(name="catalog_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="Gamma", inversedBy="models")
+     * @ORM\JoinColumn(name="gamma_id", referencedColumnName="id")
      **/
-    private $catalog;
+    private $gamma;
 
     /**
      * @var string
@@ -50,12 +50,12 @@ class Gamma
     private $image;
 
     /**
-     * @ORM\OneToMany(targetEntity="Model", mappedBy="gamma")
+     * @ORM\OneToMany(targetEntity="Group", mappedBy="model")
      */
-    private $models;
+    private $groups;
 
     function __construct() {
-        $this->models = new ArrayCollection();
+        $this->groups = new ArrayCollection();
     }
 
     /**
@@ -71,7 +71,7 @@ class Gamma
 	/**
      * Set id
      * @param integer $id
-     * @return Gamma 
+     * @return Model
      */
     public function setId($id)
     {
@@ -82,7 +82,7 @@ class Gamma
      * Set name
      *
      * @param string $name
-     * @return Gamma
+     * @return Model
      */
     public function setName($name)
     {
@@ -105,7 +105,7 @@ class Gamma
      * Set image
      *
      * @param string $image
-     * @return Gamma
+     * @return Model
      */
     public function setImage($image)
     {
@@ -127,31 +127,31 @@ class Gamma
     /**
      * Set atalog
      *
-     * @param Catalog $catalog
-     * @return Gamma
+     * @param Gamma $gamma
+     * @return Model
      */
-    public function setCatalog(Catalog $catalog)
+    public function setGamma(Gamma $gamma)
     {
-        $this->catalog = $catalog;
+        $this->gamma = $gamma;
 
         return $this;
     }
 
     /**
-     * Get atalog
+     * Get gamma
      *
      * @return string 
      */
-    public function getCatalog()
+    public function getGamma()
     {
-        return $this->catalog;
+        return $this->gamma;
     }
 	
     /**
      * Set url
      *
      * @param string $url
-     * @return Gamma
+     * @return Model
      */
     public function setUrl($url)
     {

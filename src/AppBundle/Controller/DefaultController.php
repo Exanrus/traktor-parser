@@ -52,7 +52,7 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-		$link = "http://catalogue.extranetsdf.com/eparts.jsp?PAGE_ID=HOME&VALS=ENGINE_NUMBER:X&CATALOG=DEUT&APP_CONTEXT=CRIC&CULTURE=ru-RU&KEY=RWJAVXxBfU4geURUXHpNa1E3OlQFLCYmTmMwOktlOWpjOBRpPgsEDQ1pCVIvJkcLYA&BROWSE_MODE=CURRENT&CLEAR_CACHE=TRUE";
+		$link = "http://catalogue.extranetsdf.com/eparts.jsp?PAGE_ID=HOME&VALS=ENGINE_NUMBER:X&CATALOG=DEUT&APP_CONTEXT=CRIC&CULTURE=ru-RU&KEY=R2dBXXgQIR5wKRQEDCodOg1nagRVfHZ2HjJsahs1aTozaEQ4YltUXV05WQJ/dxtbMA&BROWSE_MODE=CURRENT&CLEAR_CACHE=TRUE";
 
 		//$this->getGammas($link);
         $gamma = $this->getDoctrine()->getRepository('AppBundle:Gamma')->getFirstGamma();
